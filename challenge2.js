@@ -2,21 +2,26 @@
 // 2. Function kemarin diajdikan function expression
 
 function calculate(num1, operator, num2) { // Calculator
-    if (operator == "+") {
-        return num1 + num2
-    } else if (operator == "-") {
-        return num1 - num2
-    } else if (operator == "*") {
-        return num1 * num2
-    } else if (operator == "/") {
-        return num1 / num2
-    } else if (operator == "**") {
-        return num1 ** num2
-    } else if (operator == "%") {
-        return num1 % num2
+    if (typeof(num1) == 'number' && typeof(num2) == 'number') {
+        if (operator == "+") {
+            return num1 + num2
+        } else if (operator == "-") {
+            return num1 - num2
+        } else if (operator == "*") {
+            return num1 * num2
+        } else if (operator == "/") {
+            return num1 / num2
+        } else if (operator == "**") {
+            return num1 ** num2
+        } else if (operator == "%") {
+            return num1 % num2
+        } else {
+            const errMsg = "Operator salah"
+            return errMsg
+        }
     } else {
-        let errMsg = "Operator salah"
-        return errMsg
+        const errMsg = "number salah"
+        return errMsg                  
     }
 }
 
